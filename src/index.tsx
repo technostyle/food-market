@@ -1,30 +1,32 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { createStore, combineReducers } from "redux";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore, combineReducers } from 'redux'
 
-const initialState: any = {};
+const initialState: any = {}
 
 const reducer = combineReducers({
-  cart: (state: any = initialState) => state,
-});
-const store = createStore(reducer, initialState);
+    cart: (state: any = initialState) => state,
+})
+const store = createStore(reducer, initialState)
 
 class App extends React.Component<any, any> {
-  componentDidMount() {
-    fetch('http://localhost:3000/test');
-  }
+    componentDidMount() {
+        fetch('http://localhost:3000/test')
+    }
 
-  render() {
-    return  (<div onClick={() => fetch('http://localhost:3000/test')}>
-      <h1>Hello, World!</h1>
-      </div>);
-  }
+    render() {
+        return (
+            <div onClick={() => fetch('http://localhost:3000/test')}>
+                <h1>Hello, World!</h1>
+            </div>
+        )
+    }
 }
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById("root")
-);
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+)
