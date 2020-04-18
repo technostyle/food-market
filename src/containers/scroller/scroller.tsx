@@ -9,7 +9,7 @@ interface ScrollerProps {
 
 export const Scroller = ({ products, addToCart }: ScrollerProps) => {
     return (
-        <div style={{border: 'solid 1px red', margin: '10px'}}>
+        <div style={{ border: 'solid 1px red', margin: '10px' }}>
             {products.map((product) => (
                 <ProductComponent
                     id={product.id}

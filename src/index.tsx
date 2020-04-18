@@ -30,9 +30,9 @@ class App extends React.Component<any, any> {
                 <div onClick={() => fetch(worldHelloUrl)}>
                     <h1>World, Hello!</h1>
                 </div>
+                <Header />
                 <Cart />
                 <Catalog />
-                <Header />
                 <Order />
                 <Pagination />
                 <Scroller />

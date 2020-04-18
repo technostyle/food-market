@@ -7,7 +7,7 @@ interface CartProps {
 }
 
 export const Cart = ({ products }: CartProps) => (
-    <div style={{border: 'solid 1px', margin: '10px'}}>
+    <div style={{ border: 'solid 1px', margin: '10px' }}>
         {products.map((product) => (
             <ProductComponent
                 id={product.id}
