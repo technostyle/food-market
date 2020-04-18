@@ -8,14 +8,14 @@ const config = {
     main: resolve("./src/index.tsx"),
   },
   output: {
-    path: resolve("./dist")
+    path: resolve("./dist"),
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         loader: ["awesome-typescript-loader?module=es6"],
-        exclude: [/node_modules/],
+        exclude: [/node_modules/, /server/],
       },
       {
         test: /\.js$/,
@@ -37,14 +37,14 @@ const config = {
     extensions: [".js", ".ts", ".tsx"],
   },
   devServer: {
-    contentBase: resolve("./dist")
+    contentBase: resolve("./dist"),
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: './src/index.html',
-      filename: 'index.html'
-    })
-  ]
+      template: "./src/index.html",
+      filename: "index.html",
+    }),
+  ],
 };
 
 module.exports = config;

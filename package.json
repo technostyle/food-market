@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --config webpack.config.js --open",
-    "build": "webpack --config ./webpack.config.js --mode=production",
+    "dev-client": "cross-env NODE_ENV=development webpack-dev-server --hot --config webpack.config.js --open",
+    "build-client": "webpack --config ./webpack.config.js --mode=production",
+    "dev-server": "node server/index.js",
+    "build-server": "echo building-server",
+    "dev": "cross-env NODE_ENV=development concurrently \"yarn run dev-client\" \"yarn run dev-server\"",
     "checkstyle": "prettier -c **/*{html,js,jsx,ts,tsx}",
     "format": "prettier --write **/*{html,js,jsx,ts,tsx}"
   },
@@ -28,6 +31,10 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",

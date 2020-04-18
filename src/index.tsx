@@ -10,7 +10,15 @@ const reducer = combineReducers({
 });
 const store = createStore(reducer, initialState);
 
-const App = () => <h1>Hello, World!</h1>;
+class App extends React.Component<any, any> {
+  componentDidMount() {
+    fetch('http://localhost:3000/test');
+  }
+
+  render() {
+    return  (<h1>Hello, World!</h1>);
+  }
+}
 
 ReactDOM.render(
   <Provider store={store}>
