@@ -4,19 +4,20 @@ import { ProductComponent } from 'components/product'
 
 interface ScrollerProps {
     products: Array<Product>
-    clickProduct: Function
+    addToCart?: Function
 }
 
-export const Scroller = ({ products, clickProduct }: ScrollerProps) => {
+export const Scroller = ({ products, addToCart }: ScrollerProps) => {
     return (
-        <div>
+        <div style={{border: 'solid 1px red', margin: '10px'}}>
             {products.map((product) => (
                 <ProductComponent
                     id={product.id}
                     image={product.image}
                     name={product.name}
                     price={product.price}
-                    onClick={clickProduct}
+                    addToCart={addToCart}
+                    key={product.id}
                 />
             ))}
         </div>

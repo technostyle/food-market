@@ -1,15 +1,16 @@
-export type Id = Number
+export type Id = number
 
 export interface Product {
     id: Id
-    image: String
-    name: String
-    price: Number
+    image: string
+    name: string
+    price: number
+    quantity?: number
 }
 
 export interface Catalog {
     id: Id
-    image: String
-    name: String
+    image: string
+    name: string
     children: Array<Catalog> | null
 }

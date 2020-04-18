@@ -1,11 +1,13 @@
+import type { Id } from 'global-constants'
 import * as React from 'react'
 // import {Product} from 'global-constants'
 interface ProductComponentType {
-    id: Number
-    image: String
-    name: String
-    price: Number
-    onClick: Function
+    id: Id
+    image: string
+    name: string
+    price: number
+    addToCart?: Function
+    key?: any
 }
 
 export const ProductComponent = ({
@@ -13,12 +15,14 @@ export const ProductComponent = ({
     image,
     name,
     price,
-    onClick,
+    addToCart,
 }: ProductComponentType) => (
     <div>
-        <button onClick={() => onClick({ id, image, name, price })}>
-            CLICK ME
-        </button>
+        {addToCart ? (
+            <button onClick={() => addToCart({ id, image, name, price })}>
+                Add to cart
+            </button>
+        ) : null}
         <div>id: {id}</div>
         <div>img: {image}</div>
         <div>name: {name}</div>
