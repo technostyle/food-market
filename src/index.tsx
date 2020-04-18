@@ -16,7 +16,9 @@ class App extends React.Component<any, any> {
   }
 
   render() {
-    return  (<h1>Hello, World!</h1>);
+    return  (<div onClick={() => fetch('http://localhost:3000/test')}>
+      <h1>Hello, World!</h1>
+      </div>);
   }
 }
 
