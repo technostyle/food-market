@@ -1,19 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore, combineReducers } from 'redux'
-
-const initialState: any = {}
-
-const reducer = combineReducers({
-    cart: (state: any = initialState) => state,
-})
-const store = createStore(reducer, initialState)
+import { store } from './store'
+import {
+    Cart,
+    Catalog,
+    Header,
+    Order,
+    Pagination,
+    Scroller,
+} from './containers'
 
 // const testUrl = 'http://localhost:3000/test';
 // const testUrl = '/api/test';
-const helloWorldUrl = '/api/test';
-const worldHelloUrl = '/api/worldHello';
+const helloWorldUrl = '/api/test'
+const worldHelloUrl = '/api/worldHello'
 
 class App extends React.Component<any, any> {
     componentDidMount() {
@@ -22,15 +23,21 @@ class App extends React.Component<any, any> {
 
     render() {
         return (
-          <>
-            <div onClick={() => fetch(helloWorldUrl)}>
-                <h1>Hello, World!</h1>
-            </div>
-            <div onClick={() => fetch(worldHelloUrl)}>
-            <h1>World, Hello!</h1>
-        </div>
-        </>
-    )
+            <>
+                <div onClick={() => fetch(helloWorldUrl)}>
+                    <h1>Hello, World!</h1>
+                </div>
+                <div onClick={() => fetch(worldHelloUrl)}>
+                    <h1>World, Hello!</h1>
+                </div>
+                <Cart />
+                <Catalog />
+                <Header />
+                <Order />
+                <Pagination />
+                <Scroller />
+            </>
+        )
     }
 }
 
