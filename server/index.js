@@ -15,11 +15,18 @@ app.use(bodyParser.json())
 app.use(express.static(`${__dirname}/../dist`))
 
 app.get('/', (req, res) => {
+    console.log('/ REQUEST RECIEVED!')
     res.sendFile(path.resolve(`${__dirname}/../dist/index.html`))
 })
 
 app.get('/test', function (req, res) {
+    console.log('/test REQUEST RECIEVED!')
     res.send({ data: 'hello world' })
+})
+
+app.get('/worldHello', function (req, res) {
+    console.log('/worldHello REQUEST RECIEVED!')
+    res.send({ data: 'world hello' })
 })
 
 app.listen(PORT, function () {

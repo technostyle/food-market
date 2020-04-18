@@ -38,6 +38,12 @@ const config = {
     },
     devServer: {
         contentBase: resolve('./dist'),
+        proxy: {
+            '/api': {
+                target: 'http://localhost:3000',
+                pathRewrite: {'^/api' : ''}
+            },
+        }
     },
     plugins: [
         new HtmlWebPackPlugin({

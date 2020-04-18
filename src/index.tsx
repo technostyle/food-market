@@ -10,17 +10,27 @@ const reducer = combineReducers({
 })
 const store = createStore(reducer, initialState)
 
+// const testUrl = 'http://localhost:3000/test';
+// const testUrl = '/api/test';
+const helloWorldUrl = '/api/test';
+const worldHelloUrl = '/api/worldHello';
+
 class App extends React.Component<any, any> {
     componentDidMount() {
-        fetch('http://localhost:3000/test')
+        fetch(helloWorldUrl)
     }
 
     render() {
         return (
-            <div onClick={() => fetch('http://localhost:3000/test')}>
+          <>
+            <div onClick={() => fetch(helloWorldUrl)}>
                 <h1>Hello, World!</h1>
             </div>
-        )
+            <div onClick={() => fetch(worldHelloUrl)}>
+            <h1>World, Hello!</h1>
+        </div>
+        </>
+    )
     }
 }
 
