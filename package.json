@@ -5,7 +5,7 @@
   "scripts": {
     "dev-client": "cross-env NODE_ENV=development webpack-dev-server --hot --config webpack.config.js --open",
     "build-client": "webpack --config ./webpack.config.js --mode=production",
-    "dev-server": "node server/index.js",
+    "dev-server": "cross-env NODE_ENV=development nodemon server/index.js",
     "build-server": "echo building-server",
     "dev": "cross-env NODE_ENV=development concurrently \"yarn run dev-client\" \"yarn run dev-server\"",
     "checkstyle": "prettier -c **/*{html,js,jsx,ts,tsx}",
@@ -23,6 +23,7 @@
     "cross-env": "^7.0.2",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.2.0",
+    "nodemon": "^2.0.3",
     "prettier": "^2.0.4",
     "source-map-loader": "^0.2.4",
     "typescript": "^3.8.3",
