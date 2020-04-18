@@ -2,14 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { store } from './store'
-import {
-    Cart,
-    Catalog,
-    Header,
-    Order,
-    Pagination,
-    Scroller,
-} from './containers'
+import { Cart, Catalog, Header, Order, Scroller, Footer } from './containers'
 
 // const testUrl = 'http://localhost:3000/test';
 // const testUrl = '/api/test';
@@ -34,8 +27,8 @@ class App extends React.Component<any, any> {
                 <Cart />
                 <Catalog />
                 <Order />
-                <Pagination />
                 <Scroller />
+                <Footer />
             </>
         )
     }
