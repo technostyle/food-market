@@ -34,6 +34,7 @@ const config = {
         ],
     },
     resolve: {
+        modules: ['node_modules', resolve('./src')],
         extensions: ['.js', '.ts', '.tsx'],
     },
     devServer: {
