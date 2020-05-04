@@ -19,12 +19,12 @@ app.get('/', (req, res) => {
     res.sendFile(path.resolve(`${__dirname}/../dist/index.html`))
 })
 
-app.get('/test', function (req, res) {
+app.get('/api/test', function (req, res) {
     console.log('/test REQUEST RECIEVED!')
     res.send({ data: 'hello world' })
 })
 
-app.get('/worldHello', function (req, res) {
+app.get('/api/worldHello', function (req, res) {
     console.log('/worldHello REQUEST RECIEVED!')
     res.send({ data: 'world hello' })
 })

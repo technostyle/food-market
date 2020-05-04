@@ -85,10 +85,7 @@ const config = {
     devServer: {
         contentBase: resolve('./dist'),
         proxy: {
-            '/api': {
-                target: 'http://localhost:3000',
-                pathRewrite: { '^/api': '' },
-            },
+            '/api': 'http://localhost:3000',
         },
     },
     plugins: [
