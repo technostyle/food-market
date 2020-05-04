@@ -1,5 +1,6 @@
 const { resolve } = require('path')
 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
@@ -21,6 +22,25 @@ const config = {
                 test: /\.js$/,
                 loader: 'source-map-loader',
                 enforce: 'pre',
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: { sourceMap: true },
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: { sourceMap: true },
+                    },
+                ],
+            },
+            {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
                 test: /\.html$/,
@@ -47,6 +67,9 @@ const config = {
         },
     },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+        }),
         new HtmlWebPackPlugin({
             template: './src/index.html',
             filename: 'index.html',
