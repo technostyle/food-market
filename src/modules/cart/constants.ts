@@ -10,11 +10,13 @@ export const ACTION_TYPES = {
 
 export interface AddProductAction {
     type: typeof ACTION_TYPES.ADD_PRODUCT
+    namespace: typeof NAMESPACE
     payload: Product
 }
 
 export interface RemoveProductAction {
     type: typeof ACTION_TYPES.REMOVE_PRODUCT
+    namespace: typeof NAMESPACE
     payload: Id
 }
 

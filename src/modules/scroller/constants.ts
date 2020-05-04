@@ -9,6 +9,7 @@ export const ACTION_TYPES = {
 
 export interface SetProductsAction {
     type: typeof ACTION_TYPES.SET_PRODUCTS
+    namespace: typeof NAMESPACE
     payload: Array<Product>
 }
 
