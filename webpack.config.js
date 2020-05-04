@@ -33,6 +33,15 @@ const config = {
                         options: { sourceMap: true },
                     },
                     {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: true,
+                            config: {
+                                path: 'src/styles/postcss.config.js',
+                            },
+                        },
+                    },
+                    {
                         loader: 'sass-loader',
                         options: { sourceMap: true },
                     },
@@ -40,7 +49,23 @@ const config = {
             },
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                use: [
+                    'style-loader',
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: { sourceMap: true },
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: true,
+                            config: {
+                                path: 'src/styles/postcss.config.js',
+                            },
+                        },
+                    },
+                ],
             },
             {
                 test: /\.html$/,
