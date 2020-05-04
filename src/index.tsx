@@ -1,4 +1,5 @@
 import 'styles/css/main.css'
+import 'styles/css/normalize.css'
 import 'styles/scss/main.scss'
 
 import React from 'react'
