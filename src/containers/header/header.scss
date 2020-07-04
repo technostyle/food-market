@@ -15,3 +15,12 @@
 .header__cart {
     float: right;
 }
+
+.header__cart-icon:hover {
+    cursor: pointer;
+}
+
+.header__cart-icon {
+    width: 25px;
+    height: 25px;
+}
