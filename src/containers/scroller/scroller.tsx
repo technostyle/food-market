@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useEffect } from 'react'
 import { Product } from 'global-constants'
 import { ProductComponent } from 'components/product'
+import './scroller.scss'
 
 interface ScrollerProps {
     products: Array<Product>
@@ -19,7 +20,7 @@ export const Scroller = ({
     }, [])
 
     return (
-        <div style={{ border: 'solid 1px red', margin: '10px' }}>
+        <div className='scroller'>
             {products.map((product) => (
                 <ProductComponent
                     id={product.id}
