@@ -36,6 +36,11 @@ app.get('/api/products', function (req, res) {
     res.send({ data: products })
 })
 
+app.get('/api/img/:img_name', function(req, res) {
+    const img_name = req.params.img_name;
+    res.sendFile(path.resolve(`${__dirname}/img/${img_name}`));
+})
+
 app.listen(PORT, function () {
     console.log(`Market-app server listening on port ${PORT}`)
 })

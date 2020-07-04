@@ -23,7 +23,9 @@ export const ProductComponent = ({
             addToCart ? 'product catalog-product' : 'product cart-product'
         }
     >
-        <div className="product-info-item">img: {image}</div>
+        <div className="product-info-item">
+            <img className="product__image" src={image} alt=''/>
+        </div>
         <div className="product-info-item">name: {name}</div>
         <div className="product-info-item">price: {price}</div>
         {addToCart ? (
