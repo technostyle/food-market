@@ -1,0 +1,16 @@
+.catalog {
+    border: gray 1px solid;
+    border-top: none;
+}
+
+.catalog__category {
+    display: inline-block;
+    margin: 10px;
+}
+
+.catalog__category:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    transform: scale(1.1);
+    color: rgb(2, 158, 36);
+}
