@@ -1,0 +1,17 @@
+.header {
+    border: gray 1px solid;
+}
+
+.header__item {
+    display: inline-block;
+    margin: 10px;
+}
+
+.header__title {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.header__cart {
+    float: right;
+}

@@ -52,7 +52,7 @@ const products = [
         id: 229,
         image: 'image',
         name: 'product 4',
-        price: 1235345,
+        price: 69,
     },
 ]
 

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import './header.scss'
 
 interface HeaderProps {
     totalAmount: number
@@ -6,8 +7,14 @@ interface HeaderProps {
 }
 
 export const Header = ({ totalAmount, uniqQuantity }: HeaderProps) => (
-    <div style={{ border: 'solid 3px green' }}>
-        <p> totalAmount: {totalAmount}</p>
-        <p> uniqQuanitity: {uniqQuantity}</p>
+    <div className='header'>
+        <div className="header__item header__title">
+            Food shop
+        </div>
+        <div className="header__item header__cart">
+            <div className="header__item">totalAmount: {totalAmount}</div>
+            <div className="header__item">products: {uniqQuantity}</div>
+            <div className="header__item">cart</div>
+        </div>
     </div>
 )
