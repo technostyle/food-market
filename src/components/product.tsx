@@ -26,11 +26,11 @@ export const ProductComponent = ({
         <div className="product-info-item">
             <img className="product__image" src={image} alt=''/>
         </div>
-        <div className="product-info-item">name: {name}</div>
-        <div className="product-info-item">price: {price}</div>
+        <div className="product-info-item">{name}</div>
+        <div className="product-info-item">price: {`${price} / kg`}</div>
         {addToCart ? (
             <button
-                className="add-cart-button"
+                className="product-info-item add-cart-button"
                 onClick={() => addToCart({ id, image, name, price })}
             >
                 Add to cart
