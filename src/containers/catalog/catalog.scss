@@ -8,9 +8,13 @@
     margin: 10px;
 }
 
-.catalog__category:hover {
+.catalog__category:hover{
     text-decoration: underline;
     cursor: pointer;
     transform: scale(1.1);
+    color: rgb(2, 158, 36);
+}
+
+.catalog__category_active {
     color: rgb(2, 158, 36);
 }

@@ -1,6 +1,7 @@
-import { Product } from 'global-constants'
 import { ScrollerState } from './constants'
 
-export const setProducts = (state: ScrollerState, payload: Array<Product>) => {
+export const setProducts = (state: ScrollerState, payload: any) => {
     return { ...state, products: payload }
 }
+
+export const setCategory = (state: ScrollerState, payload: any) => ({...state, category: payload})

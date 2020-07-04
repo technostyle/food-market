@@ -1,12 +1,20 @@
 import * as React from 'react'
+import {keys} from 'lodash'
 import './catalog.scss'
+import {CATEGORIES, CATEGORY_NAMES} from './constants'
 
-export const Catalog = () => (
+interface CatalogProps {
+    category: string,
+    onCategoryChange: Function
+}
+
+export const Catalog = ({category: activeCategory,onCategoryChange}: CatalogProps) => (
     <div className="catalog">
-        <div className="catalog__category">Фрукты</div>
-        <div className="catalog__category">Овощи</div>
-        <div className="catalog__category">Ягоды</div>
-        <div className="catalog__category">Орехи</div>
-        <div className="catalog__category">Сухофрукты</div>
+        {keys(CATEGORIES).map((category, index) => (
+            <div 
+            key={index}
+            className={`catalog__category ${CATEGORIES[category] === activeCategory ? 'catalog__category_active': ''}`}
+            onClick={() => onCategoryChange(CATEGORIES[category])}>{CATEGORY_NAMES[category]}</div>
+        ))}
     </div>
 )

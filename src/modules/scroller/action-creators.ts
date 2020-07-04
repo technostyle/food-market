@@ -6,3 +6,9 @@ export const setProducts = (products: Array<Product>) => ({
     namespace: NAMESPACE,
     payload: products,
 })
+
+export const setCategory = (category: string) => ({
+    type: ACTION_TYPES.SET_CATEGORY,
+    namespace: NAMESPACE,
+    payload: category,
+})

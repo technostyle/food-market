@@ -3,7 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-const {products} = require('./data');
+const productController = require('./controllers/product-controller');
 
 const PORT = process.env.PORT || 3000
 
@@ -31,8 +31,11 @@ app.get('/api/worldHello', function (req, res) {
     res.send({ data: 'world hello' })
 })
 
+// TODO: routes
 app.get('/api/products', function (req, res) {
-    console.log('/api/products REQUEST RECIEVED!')
+    const query = req.query;
+    console.log('/api/products REQUEST RECIEVED!', {query})
+    const products = productController.getProducts(query || {})
     res.send({ data: products })
 })
 
