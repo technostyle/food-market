@@ -1,4 +1,4 @@
-import {getScrollerProductsUrl} from 'utils/url'
+import { getScrollerProductsUrl } from 'utils/url'
 // import { SCROLLER_PRODUCTS_URL } from 'global-constants'
 
 // TODO: utils
@@ -15,9 +15,9 @@ const parseFetchReponse = async (response: any) => {
 class ScrollerService {
     constructor() {}
 
-    async getProducts({category, page}: {category: string, page: number}) {
+    async getProducts({ category, page }: { category: string; page: number }) {
         try {
-            const getProductsUrl = getScrollerProductsUrl(category, page);
+            const getProductsUrl = getScrollerProductsUrl(category, page)
             const response = await fetch(getProductsUrl)
             if (!response.ok) {
                 throw new Error('response not ok error')

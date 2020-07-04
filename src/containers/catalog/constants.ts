@@ -16,9 +16,8 @@ export const CATEGORIES: CATEGORIES_TYPE = {
     FRUITS: 'fruits',
     BERRIES: 'berries',
     NUTS: 'nuts',
-    DRIED_FRUITS: 'driedFruits'
+    DRIED_FRUITS: 'driedFruits',
 }
-
 
 export const CATEGORY_NAMES = {
     ALL: 'All',

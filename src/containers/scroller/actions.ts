@@ -8,6 +8,9 @@ export const addToCart = (product: Product) => (dispatch: Function) => {
 }
 
 export const fetchProducts = () => async (dispatch: Function) => {
-    const products = await scrollerService.getProducts({category: 'all', page: 1})
+    const products = await scrollerService.getProducts({
+        category: 'all',
+        page: 1,
+    })
     dispatch(setProducts(products))
 }

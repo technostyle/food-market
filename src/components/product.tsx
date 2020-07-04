@@ -24,7 +24,7 @@ export const ProductComponent = ({
         }
     >
         <div className="product-info-item">
-            <img className="product__image" src={image} alt=''/>
+            <img className="product__image" src={image} alt="" />
         </div>
         <div className="product-info-item">{name}</div>
         <div className="product-info-item">price: {`${price} / kg`}</div>

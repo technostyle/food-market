@@ -5,7 +5,7 @@ export const NAMESPACE = 'scroller'
 
 export const ACTION_TYPES = {
     SET_PRODUCTS: 'SET_PRODUCTS',
-    SET_CATEGORY: 'SET_CATEGORY'
+    SET_CATEGORY: 'SET_CATEGORY',
 }
 
 export interface SetProductsAction {
@@ -20,10 +20,9 @@ export interface SetCategoryAction {
     payload: string
 }
 
-
 export type ScrollerActionTypes = SetProductsAction | SetCategoryAction
 
 export interface ScrollerState {
-    category: string,
+    category: string
     products: Array<Product>
 }

@@ -14,7 +14,7 @@ export const Header = ({ totalAmount, uniqQuantity }: HeaderProps) => (
             <div className="header__item">totalAmount: {totalAmount}</div>
             <div className="header__item">products: {uniqQuantity}</div>
             <div className="header__item">
-                <img className="header__cart-icon" src={cartIcon} alt=''></img>
+                <img className="header__cart-icon" src={cartIcon} alt=""></img>
             </div>
         </div>
     </div>

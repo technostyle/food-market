@@ -3,7 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-const productController = require('./controllers/product-controller');
+const productController = require('./controllers/product-controller')
 
 const PORT = process.env.PORT || 3000
 
@@ -33,15 +33,15 @@ app.get('/api/worldHello', function (req, res) {
 
 // TODO: routes
 app.get('/api/products', function (req, res) {
-    const query = req.query;
-    console.log('/api/products REQUEST RECIEVED!', {query})
+    const query = req.query
+    console.log('/api/products REQUEST RECIEVED!', { query })
     const products = productController.getProducts(query || {})
     res.send({ data: products })
 })
 
-app.get('/api/img/:img_name', function(req, res) {
-    const img_name = req.params.img_name;
-    res.sendFile(path.resolve(`${__dirname}/img/${img_name}`));
+app.get('/api/img/:img_name', function (req, res) {
+    const img_name = req.params.img_name
+    res.sendFile(path.resolve(`${__dirname}/img/${img_name}`))
 })
 
 app.listen(PORT, function () {
