@@ -20,7 +20,7 @@ export const Scroller = ({
     }, [])
 
     return (
-        <div className='scroller'>
+        <div className="scroller">
             {products.map((product) => (
                 <ProductComponent
                     id={product.id}

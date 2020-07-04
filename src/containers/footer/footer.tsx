@@ -1,4 +1,5 @@
 import * as React from 'react'
+import './footer.scss'
 
 interface FooterProps {
     currentPage: number
@@ -17,18 +18,25 @@ export const Footer = ({
     moveNextPage,
     movePrevPage,
 }: FooterProps) => (
-    <div style={{ border: 'solid brown 4px' }}>
-        <button disabled={isPrevPageDisabled} onClick={movePrevPage}>
-            {' '}
-            PREV{' '}
-        </button>
-        <button disabled={isNextPageDisabled} onClick={moveNextPage}>
-            {' '}
-            NEXT{' '}
-        </button>
-        <div>
-            {' '}
-            page {currentPage} of {totalPages}
+    <div className="footer">
+        <div className="footer__pagination">
+            <button
+                className="pagination__item pagination__button"
+                disabled={isPrevPageDisabled}
+                onClick={movePrevPage}
+            >
+                &#8249;
+            </button>
+            <div className="pagination__item">
+                {`${currentPage}/${totalPages}`}
+            </div>
+            <button
+                className="pagination__item pagination__button"
+                disabled={isNextPageDisabled}
+                onClick={moveNextPage}
+            >
+                &#8250;
+            </button>
         </div>
     </div>
 )

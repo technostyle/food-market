@@ -1,0 +1,28 @@
+.footer {
+    padding: 5px;
+}
+
+.footer__item {
+    display: inline-block;
+}
+
+.footer__pagination {
+    width: 20%;
+    margin: auto;
+}
+
+.pagination__item {
+    display: inline-block;
+    margin: 5px;
+}
+
+.pagination__button {
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background: #f0f0f0;
+}
+
+.pagination__button:hover {
+    background: lightsteelblue;
+}

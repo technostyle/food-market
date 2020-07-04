@@ -7,10 +7,8 @@ interface HeaderProps {
 }
 
 export const Header = ({ totalAmount, uniqQuantity }: HeaderProps) => (
-    <div className='header'>
-        <div className="header__item header__title">
-            Food shop
-        </div>
+    <div className="header">
+        <div className="header__item header__title">Food shop</div>
         <div className="header__item header__cart">
             <div className="header__item">totalAmount: {totalAmount}</div>
             <div className="header__item">products: {uniqQuantity}</div>

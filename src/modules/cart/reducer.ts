@@ -1,5 +1,5 @@
-import type { CartActionTypes} from './constants'
-import {NAMESPACE} from './constants'
+import type { CartActionTypes } from './constants'
+import { NAMESPACE } from './constants'
 import { ACTION_TYPES } from './constants'
 import type { CartState } from './constants'
 import { addProduct } from './actions'
@@ -13,7 +13,7 @@ export const reducer = (
     { type, namespace, payload }: CartActionTypes
 ) => {
     if (namespace !== NAMESPACE) {
-        return state || initialState;
+        return state || initialState
     }
 
     switch (type) {

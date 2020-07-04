@@ -1,5 +1,5 @@
 import type { ScrollerActionTypes } from './constants'
-import {NAMESPACE} from './constants'
+import { NAMESPACE } from './constants'
 import { ACTION_TYPES } from './constants'
 import type { ScrollerState } from './constants'
 import { setProducts } from './actions'
