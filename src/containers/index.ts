@@ -1,6 +1,5 @@
 export { Cart } from './cart'
 export { Catalog } from './catalog'
 export { Header } from './header'
-export { Order } from './order'
 export { Scroller } from './scroller'
 export { Footer } from './footer'

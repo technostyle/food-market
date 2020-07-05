@@ -1,22 +1,57 @@
 import * as React from 'react'
-import { Product } from 'global-constants'
-import { ProductComponent } from 'components/product'
+import { Product, Id } from 'global-constants'
+import { CartProduct } from 'components/cart-product'
+import './cart.scss'
+import cartIcon from 'icons/cart.png'
 
 interface CartProps {
     products: Array<Product>
+    isOpen: boolean
+    onCartClose: () => void
+    removeFromCart: (id: Id) => void
+    createOrder: () => void
 }
 
-export const Cart = ({ products }: CartProps) =>
-    products.length ? (
-        <div style={{ border: 'solid 1px' }}>
-            {products.map((product) => (
-                <ProductComponent
-                    id={product.id}
-                    image={product.image}
-                    name={product.name}
-                    price={product.price}
-                    key={product.id}
-                />
-            ))}
+export const Cart = ({
+    products,
+    isOpen,
+    onCartClose,
+    removeFromCart,
+    createOrder,
+}: CartProps) =>
+    isOpen ? (
+        <div className="overlay" onClick={onCartClose}>
+            <div className="cart" onClick={(event) => event.stopPropagation()}>
+                <button className="cart__close-button" onClick={onCartClose}>
+                    {' '}
+                    x{' '}
+                </button>
+                <div className="cart__products">
+                    {products.length ? (
+                        <>
+                            {products.map((product) => (
+                                <CartProduct
+                                    id={product.id}
+                                    image={product.image}
+                                    name={product.name}
+                                    price={product.price}
+                                    removeFromCart={removeFromCart}
+                                    key={product.id}
+                                />
+                            ))}
+                            <button
+                                className="cart__order-button"
+                                onClick={createOrder}
+                            >
+                                Order
+                            </button>
+                        </>
+                    ) : (
+                        <div className="cart__empty">
+                            <img className="cart__empty-icon" src={cartIcon} />
+                        </div>
+                    )}
+                </div>
+            </div>
         </div>
     ) : null

@@ -6,6 +6,7 @@ export const NAMESPACE = 'cart'
 export const ACTION_TYPES = {
     ADD_PRODUCT: 'ADD_PRODUCT',
     REMOVE_PRODUCT: 'REMOVE_PRODUCT',
+    OPEN_CART: 'OPEN_CART',
 }
 
 export interface AddProductAction {
@@ -20,8 +21,18 @@ export interface RemoveProductAction {
     payload: Id
 }
 
-export type CartActionTypes = AddProductAction | RemoveProductAction
+export interface OpenAction {
+    type: typeof ACTION_TYPES.OPEN_CART
+    namespace: typeof NAMESPACE
+    payload: boolean
+}
+
+export type CartActionTypes =
+    | AddProductAction
+    | RemoveProductAction
+    | OpenAction
 
 export interface CartState {
     products: Array<Product>
+    isOpen: boolean
 }

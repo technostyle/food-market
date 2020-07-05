@@ -1,0 +1,19 @@
+.cart-product {
+    border-bottom: 1px solid grey;
+}
+
+.cart-product__image {
+    width: 90px;
+    height: 60px;
+}
+
+.cart-product__item {
+    display: inline-block;
+}
+
+.cart-product__remove-button {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+}

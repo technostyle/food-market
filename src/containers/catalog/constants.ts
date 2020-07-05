@@ -1,16 +1,8 @@
-interface CATEGORIES_TYPE {
+interface StringEnum {
     [id: string]: string
 }
-// export const CATEGORIES = [
-//     'all',
-//     'vegetables',
-//     'fruits',
-//     'berries',
-//     'nuts',
-//     'dried'
-// ];
 
-export const CATEGORIES: CATEGORIES_TYPE = {
+export const CATEGORIES: StringEnum = {
     ALL: 'all',
     VEGETABLES: 'vegetables',
     FRUITS: 'fruits',
@@ -19,7 +11,7 @@ export const CATEGORIES: CATEGORIES_TYPE = {
     DRIED_FRUITS: 'driedFruits',
 }
 
-export const CATEGORY_NAMES = {
+export const CATEGORY_NAMES: StringEnum = {
     ALL: 'All',
     VEGETABLES: 'Vegetables',
     FRUITS: 'Fruits',

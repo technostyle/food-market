@@ -12,3 +12,12 @@ export const addProduct = (state: CartState, payload: any) => {
 
     return { ...state, products }
 }
+
+export const openCart = (state: CartState, payload: any) => {
+    return { ...state, isOpen: payload }
+}
+
+export const removeProduct = (state: CartState, payload: any) => {
+    const newProducts = state.products.filter(({ id }) => id !== payload.id)
+    return { ...state, products: newProducts }
+}

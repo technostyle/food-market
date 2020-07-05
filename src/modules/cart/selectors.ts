@@ -17,3 +17,5 @@ export const getTotalAmount = createSelector(getProducts, (products) =>
 export const getUniqQuantity = createSelector(getProducts, (products) =>
     products.reduce((total: number) => total + 1, 0)
 )
+
+export const getIsCartOpen = createSelector(getDomain, prop('isOpen'))

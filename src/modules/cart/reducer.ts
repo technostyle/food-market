@@ -2,10 +2,11 @@ import type { CartActionTypes } from './constants'
 import { NAMESPACE } from './constants'
 import { ACTION_TYPES } from './constants'
 import type { CartState } from './constants'
-import { addProduct } from './actions'
+import { addProduct, openCart, removeProduct } from './actions'
 
 const initialState: CartState = {
     products: [],
+    isOpen: false,
 }
 
 export const reducer = (
@@ -19,6 +20,10 @@ export const reducer = (
     switch (type) {
         case ACTION_TYPES.ADD_PRODUCT:
             return addProduct(state, payload)
+        case ACTION_TYPES.REMOVE_PRODUCT:
+            return removeProduct(state, payload)
+        case ACTION_TYPES.OPEN_CART:
+            return openCart(state, payload)
         default:
             return initialState
     }
