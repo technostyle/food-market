@@ -1,5 +1,6 @@
 .cart-product {
     border-bottom: 1px solid grey;
+    display: flex;
 }
 
 .cart-product__image {
@@ -8,7 +9,13 @@
 }
 
 .cart-product__item {
-    display: inline-block;
+    height: 90px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    font-size: 1.2em;
 }
 
 .cart-product__remove-button {
@@ -16,4 +23,8 @@
     border-radius: 5px;
     color: white;
     background-color: red;
+}
+
+.cart-product__remove-button:hover {
+    cursor: pointer;
 }

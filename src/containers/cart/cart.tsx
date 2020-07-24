@@ -22,10 +22,7 @@ export const Cart = ({
     isOpen ? (
         <div className="overlay" onClick={onCartClose}>
             <div className="cart" onClick={(event) => event.stopPropagation()}>
-                <button className="cart__close-button" onClick={onCartClose}>
-                    {' '}
-                    x{' '}
-                </button>
+                <button className="cart__close-button" onClick={onCartClose}>x</button>
                 <div className="cart__products">
                     {products.length ? (
                         <>
@@ -47,8 +44,9 @@ export const Cart = ({
                             </button>
                         </>
                     ) : (
-                        <div className="cart__empty">
-                            <img className="cart__empty-icon" src={cartIcon} />
+                        <div className="cart_empty">
+                            <img className="cart_empty-icon" src={cartIcon} />
+                            <h2> Cart is empty </h2>
                         </div>
                     )}
                 </div>

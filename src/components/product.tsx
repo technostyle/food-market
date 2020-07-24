@@ -27,7 +27,7 @@ export const ProductComponent = ({
             <img className="product__image" src={image} alt="" />
         </div>
         <div className="product-info-item">{name}</div>
-        <div className="product-info-item">price: {`${price} / kg`}</div>
+        <div className="product-info-item">price: {price} &#8381; {'/ kg'}</div>
         {addToCart ? (
             <button
                 className="product-info-item add-cart-button"

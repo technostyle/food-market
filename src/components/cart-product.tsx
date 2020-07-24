@@ -22,8 +22,12 @@ export const CartProduct = ({
         <div className="cart-product__item">
             <img className="cart-product__image" src={image} alt="" />
         </div>
-        <div className="cart-product__item">{name}</div>
-        <div className="cart-product__item">price: {`${price} / kg`}</div>
+        <div className="cart-product__item">
+                {name}
+        </div>
+        <div className="cart-product__item">
+                {`${price}`} &#8381; {'/ kg'}
+        </div>
         <div className="cart-product__item">
             <button
                 className="cart-product__remove-button"
