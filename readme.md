@@ -12,16 +12,10 @@ yarn
 
 #Launching
 ```
-yarn
-```
-```
 yarn run start
 ```
 
 #Development
-```
-yarn
-```
 ```
 yarn run dev
 ```
