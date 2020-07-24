@@ -11,6 +11,12 @@
     border-radius: 5px;
     color: white;
     background-color: rgb(2, 158, 36);
+    outline: none;
+    cursor: pointer;
+}
+
+.add-cart-button:hover {
+    transform: scale(1.2);
 }
 
 .product-info-item {
